@@ -59,6 +59,17 @@ func function1( anonymous func(p,q string) string ){
 	fmt.Println(anonymous("My name","is"))
 }
 
+func deferTest() {
+	
+	// Defer is used to delay the execution of a statement until the surrounding function returns
+	// Will be executed in LIFO order(Last In First Out)
+	defer fmt.Println("Defer 1")
+	defer fmt.Println("Defer 2")
+	defer fmt.Println("Defer 3")
+
+
+}
+
 func main() {
      
 	fmt.Println(add(2,3))
@@ -91,6 +102,8 @@ func main() {
 	fmt.Println(x,y)
 	x,y = swap( x,y )
 	fmt.Println(x,y)
+
+	deferTest()
 
 	//To be studied : Closure
 	
